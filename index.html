@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Mais Futuro | Transformando Vidas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <meta name="description" content="O Instituto Mais Futuro é uma ONG que trabalha com projetos de educação e engajamento social.">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Instituto Mais Futuro</a></h1>
+        
+        <nav aria-label="Menu Principal">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doar</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="blog.html">Blog/Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Construindo um Futuro Mais Justo</h2>
+            <p>Sua doação e seu tempo transformam realidades. Junte-se ao Instituto Mais Futuro.</p>
+            <a href="doacoes.html" class="button-principal">QUERO DOAR AGORA</a>
+        </section>
+
+        <aside aria-label="Assinatura de Newsletter">
+            <h3>Receba Nossas Novidades!</h3>
+            <form action="/assinar_newsletter" method="POST">
+                <fieldset>
+                    <legend>Assine a Newsletter</legend>
+                    
+                    <label for="email_news">Seu Melhor E-mail:</label>
+                    <input type="email" id="email_news" name="email_news" required placeholder="exemplo@email.com">
+
+                    <p>Quais conteúdos te interessam?</p>
+                    <input type="checkbox" id="pref_projetos" name="preferencias[]" value="projetos" checked>
+                    <label for="pref_projetos">Novos Projetos</label>
+                    
+                    <input type="checkbox" id="pref_eventos" name="preferencias[]" value="eventos">
+                    <label for="pref_eventos">Eventos e Webinars</label>
+                    
+                </fieldset>
+                <button type="submit">Assinar</button>
+            </form>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
