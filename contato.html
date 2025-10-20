@@ -7,42 +7,71 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1><a href="index.html">Instituto Mais Futuro</a></h1>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="main-nav">
+        <label for="menu-toggle" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav aria-label="Menu Principal" id="main-nav">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doar</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <section id="fale-conosco">
-            <h2>Entre em Contato</h2>
-            
-            <form action="/enviar_contato" method="POST">
-                <fieldset>
-                    <legend>Mensagem Rápida</legend>
-                    
-                    <label for="assunto">Assunto Principal:</label>
-                    <select id="assunto" name="assunto" required>
-                        <option value="">Selecione</option>
-                        <option value="duvida">Dúvida Geral</option>
-                        <option value="imprensa">Imprensa / Mídia</option>
-                        <option value="parceria">Proposta de Parceria</option>
-                    </select>
-
-                    <label for="mensagem">Sua Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-                    
-                    <label for="anexo">Anexar Documento (Opcional):</label>
-                    <input type="file" id="anexo" name="anexo" accept=".pdf, .doc, .png">
-                </fieldset>
+        <div class="container">
+            <section id="fale-conosco">
+                <h2>Entre em Contato</h2>
                 
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-        </section>
+                <form action="/enviar_contato" method="POST">
+                    <fieldset>
+                        <legend>Mensagem Rápida</legend>
+                        
+                        <label for="assunto">Assunto Principal:</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione</option>
+                            <option value="duvida">Dúvida Geral</option>
+                            <option value="imprensa">Imprensa / Mídia</option>
+                            <option value="parceria">Proposta de Parceria</option>
+                        </select>
 
-        <section id="localizacao-info">
-            <h3>Onde Estamos</h3>
-            <address>
-                Rua da Esperança, 123 - Bairro Solidário<br>
-                Cidade, Estado - CEP 00000-000
-            </address>
-        </section>
+                        <label for="mensagem">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                        
+                        <label for="anexo">Anexar Documento (Opcional):</label>
+                        <input type="file" id="anexo" name="anexo" accept=".pdf, .doc, .png">
+                    </fieldset>
+                    
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </section>
+
+            <section id="localizacao-info">
+                <h3>Onde Estamos</h3>
+                <address>
+                    Rua da Esperança, 123 - Bairro Solidário<br>
+                    Cidade, Estado - CEP 00000-000
+                </address>
+                
+                <h4>Outros Meios:</h4>
+                <p>E-mail: contato@maisfuturo.org</p>
+                <p>Telefone: (99) 9999-9999</p>
+            </section>
+        </div>
     </main>
-    <footer></footer>
+    
+    <footer>
+        <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

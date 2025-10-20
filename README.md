@@ -10,9 +10,12 @@ O projeto é estruturado nos seguintes arquivos principais:
 Tecnologias
 HTML5: Estrutura semântica e acessível.
 
-CSS3: Estilização e adaptação (uso de viewport).
+CSS3: **Estilização modular, responsiva e acessível.**
+  * **Arquitetura:** Estrutura modular (simulando SCSS/pré-processador) com arquivos dedicados a reset, variáveis, layouts e componentes.
+  * **Design System:** Uso de Variáveis CSS (`--color-primary`, `--spacing-1`, etc.).
+  * **Layouts:** Implementação de Flexbox para componentes e Grid Layout de 12 colunas para o sistema de layout principal.
 
-JavaScript (Vanilla JS): Lógica funcional para interatividade.
+JavaScript (Vanilla JS): Lógica funcional para interatividade, gráficos Canvas e geração dinâmica de conteúdo.
 
 Arquivos HTML Principais
 index.html: Página inicial e Formulário 4 (Newsletter).
@@ -46,6 +49,15 @@ Quatro formulários distintos em diferentes páginas (Voluntariado, Doação, Pr
 
 3. Gráficos Canvas
 Implementação de 3 tipos de gráficos (Pizza, Linha e Barras) na página transparencia.html, desenhados usando a API Canvas via js/main.js.
+
+4. Estilização Avançada e Responsividade (CSS3)
+Design Responsivo Completo: Uso de Media Queries para adaptar o layout a dispositivos móveis, tablets e desktops.
+
+Menu Hambúrguer: Implementação do menu responsivo utilizando o "Checkbox Hack" no HTML/CSS, garantindo acessibilidade e funcionalidade sem JavaScript.
+
+Grid Layout: Aplicação de um sistema de Grid de 12 colunas (classes .row, .col-lg-X, .col-md-X) e Container centralizado para alinhar o conteúdo principal.
+
+CSS Modular: Estilização organizada em arquivos modulares (reset, typography, layouts, components).
 
 Instruções de Execução
 Clone o repositório para sua máquina local.

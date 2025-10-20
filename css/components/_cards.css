@@ -1,0 +1,51 @@
+/* ========================================================================= */
+/* COMPONENTS: _cards.css - CARDS RESPONSIVOS E GALERIA                      */
+/* ========================================================================= */
+
+/* Cards de Projeto/Missão (usados em sobre.html e projetos.html) */
+.projeto-card,
+#missao-valores article {
+    background-color: var(--color-white);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Galeria de Fotos (Em projetos.html - Uso de CSS Grid) */
+.galeria-grid {
+    display: grid; /* Uso obrigatório de Grid */
+    /* Cria 4 colunas em telas grandes, 2 em tablet, 1 em mobile */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-4);
+}
+
+.galeria-item {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.05);
+}
+
+.galeria-item figcaption {
+    padding: var(--spacing-2);
+    text-align: center;
+    background-color: var(--color-neutral-light);
+}

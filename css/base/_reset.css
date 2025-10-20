@@ -1,0 +1,18 @@
+/* ========================================================================= */
+/* BASE: _reset.css - NORMALIZAÇÃO E BOX-SIZING                              */
+/* ========================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não alterem a largura/altura */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+ul {
+    list-style: none;
+}

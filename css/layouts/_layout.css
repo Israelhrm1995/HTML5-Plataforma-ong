@@ -1,0 +1,73 @@
+/* ========================================================================= */
+/* LAYOUTS: _layout.css - ESTRUTURA PRINCIPAL E FLEXBOX                      */
+/* ========================================================================= */
+
+/* Estrutura Principal (CSS Grid para o corpo) */
+body {
+    display: grid;
+    /* Define o layout principal: cabeçalho, conteúdo e rodapé */
+    grid-template-rows: auto 1fr auto; 
+    min-height: 100vh;
+}
+
+main {
+    padding: var(--spacing-4) 0;
+}
+
+section {
+    padding: var(--spacing-5) var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+}
+
+/* Header */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-3) var(--spacing-2);
+    /* Flexbox para alinhamento interno */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: var(--color-white);
+    font-size: var(--font-size-h2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-neutral-dark);
+    color: var(--color-white);
+    padding: var(--spacing-4) var(--spacing-2);
+    text-align: center;
+}
+
+/* Seções com Flexbox (Exemplo: Hero, Missão/Valores) */
+#hero {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-6);
+}
+
+#missao-valores {
+    display: flex; /* Uso obrigatório de Flexbox */
+    gap: var(--spacing-4);
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#missao-valores article {
+    flex: 1 1 40%; /* Flexbox: Cresce, encolhe, base de 40% */
+    padding: var(--spacing-3);
+    border-left: 5px solid var(--color-secondary);
+    box-shadow: var(--shadow-small);
+}
+
+/* Leiaute do Transparência (Gráficos) */
+#relatorios-impacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Uso de Grid */
+    gap: var(--spacing-4);
+}

@@ -1,0 +1,17 @@
+/* ========================================================================= */
+/* ARQUIVO PRINCIPAL: styles.css                                             */
+/* Importa todos os módulos do Design System e Componentes                   */
+/* ========================================================================= */
+
+@import url('base/_reset.css');
+@import url('base/_variables.css');
+
+@import url('layouts/_grid.css');
+@import url('layouts/_layout.css');
+
+@import url('components/_buttons.css');
+@import url('components/_navigation.css');
+@import url('components/_forms.css');
+@import url('components/_cards.css');
+
+@import url('utilities/_helpers.css');

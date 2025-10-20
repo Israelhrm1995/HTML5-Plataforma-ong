@@ -1,0 +1,52 @@
+/* ========================================================================= */
+/* COMPONENTS: _buttons.css - BOTÕES E ESTADOS                               */
+/* ========================================================================= */
+
+.button-principal, 
+button[type="submit"], 
+.button {
+    display: inline-block;
+    padding: var(--spacing-2) var(--spacing-4);
+    margin-top: var(--spacing-3);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-body);
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+    
+    /* Padrão Primário */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Estado de Hover e Focus */
+.button-principal:hover, 
+button[type="submit"]:hover, 
+.button:hover,
+.button-principal:focus, 
+button[type="submit"]:focus, 
+.button:focus {
+    background-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-small);
+    outline: none;
+}
+
+/* Estado Ativo (pressionado) */
+.button-principal:active, 
+button[type="submit"]:active, 
+.button:active {
+    background-color: var(--color-primary-dark);
+    transform: translateY(1px);
+}
+
+/* Estado Disabled (Obrigatório) */
+.button-principal:disabled, 
+button[type="submit"]:disabled, 
+.button:disabled {
+    background-color: var(--color-neutral-mid);
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
