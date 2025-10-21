@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Mais Futuro | Transformando Vidas</title>
     <link rel="stylesheet" href="css/styles.css">
-    
     <meta name="description" content="O Instituto Mais Futuro é uma ONG que trabalha com projetos de educação e engajamento social.">
 </head>
 <body>
     <header>
         <h1><a href="index.html">Instituto Mais Futuro</a></h1>
         
-        <nav aria-label="Menu Principal">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="main-nav">
+        <label for="menu-toggle" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav aria-label="Menu Principal" id="main-nav">
             <ul>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="voluntariado.html">Voluntariado</a></li>
                 <li><a href="doacoes.html">Doar</a></li>
                 <li><a href="transparencia.html">Transparência</a></li>
-                <li><a href="blog.html">Blog/Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
@@ -27,30 +33,54 @@
 
     <main>
         <section id="hero">
-            <h2>Construindo um Futuro Mais Justo</h2>
-            <p>Sua doação e seu tempo transformam realidades. Junte-se ao Instituto Mais Futuro.</p>
-            <a href="doacoes.html" class="button-principal">QUERO DOAR AGORA</a>
+            <div class="container">
+                <h2>Construindo um Futuro Mais Justo</h2>
+                <p>Sua doação e seu tempo transformam realidades. Junte-se ao Instituto Mais Futuro.</p>
+                <a href="doacoes.html" class="button-principal">QUERO DOAR AGORA</a>
+            </div>
+        </section>
+
+        <section id="destaques">
+            <div class="container row">
+                <article class="col-lg-4 col-md-6 destaque-card">
+                    <h3>Educação para o Futuro</h3>
+                    <p>Mais de 500 jovens formados em cursos profissionalizantes.</p>
+                    <a href="projetos.html" class="button">Ver Projetos</a>
+                </article>
+                <article class="col-lg-4 col-md-6 destaque-card">
+                    <h3>Impacto e Transparência</h3>
+                    <p>Veja como cada real doado é convertido em ação social.</p>
+                    <a href="transparencia.html" class="button">Ver Relatórios</a>
+                </article>
+                <article class="col-lg-4 col-md-12 destaque-card">
+                    <h3>Voluntariado</h3>
+                    <p>Sua habilidade e seu tempo são essenciais para a nossa missão.</p>
+                    <a href="voluntariado.html" class="button">Cadastre-se</a>
+                </article>
+            </div>
         </section>
 
         <aside aria-label="Assinatura de Newsletter">
-            <h3>Receba Nossas Novidades!</h3>
-            <form action="/assinar_newsletter" method="POST">
-                <fieldset>
-                    <legend>Assine a Newsletter</legend>
-                    
-                    <label for="email_news">Seu Melhor E-mail:</label>
-                    <input type="email" id="email_news" name="email_news" required placeholder="exemplo@email.com">
+            <div class="container">
+                <h3>Receba Nossas Novidades!</h3>
+                <form action="/assinar_newsletter" method="POST">
+                    <fieldset>
+                        <legend>Assine a Newsletter (Formulário 4)</legend>
+                        
+                        <label for="email_news">Seu Melhor E-mail:</label>
+                        <input type="email" id="email_news" name="email_news" required placeholder="exemplo@email.com">
 
-                    <p>Quais conteúdos te interessam?</p>
-                    <input type="checkbox" id="pref_projetos" name="preferencias[]" value="projetos" checked>
-                    <label for="pref_projetos">Novos Projetos</label>
-                    
-                    <input type="checkbox" id="pref_eventos" name="preferencias[]" value="eventos">
-                    <label for="pref_eventos">Eventos e Webinars</label>
-                    
-                </fieldset>
-                <button type="submit">Assinar</button>
-            </form>
+                        <p>Quais conteúdos te interessam?</p>
+                        <input type="checkbox" id="pref_projetos" name="preferencias[]" value="projetos" checked>
+                        <label for="pref_projetos">Novos Projetos</label>
+                        
+                        <input type="checkbox" id="pref_eventos" name="preferencias[]" value="eventos">
+                        <label for="pref_eventos">Eventos e Webinars</label>
+                        
+                    </fieldset>
+                    <button type="submit">Assinar</button>
+                </form>
+            </div>
         </aside>
     </main>
     

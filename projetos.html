@@ -10,95 +10,60 @@
     <header>
         <h1><a href="index.html">Instituto Mais Futuro</a></h1>
         
-        <nav aria-label="Menu Principal">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="main-nav">
+        <label for="menu-toggle" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav aria-label="Menu Principal" id="main-nav">
             <ul>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="voluntariado.html">Voluntariado</a></li>
                 <li><a href="doacoes.html">Doar</a></li>
                 <li><a href="transparencia.html">Transparência</a></li>
-                <li><a href="blog.html">Blog/Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <h2>Projetos de Transformação Social</h2>
-        
-        <section id="projetos-ativos">
-            <h3>Alfabetização Digital na Terceira Idade</h3>
+        <div class="container">
+            <h2>Projetos de Transformação Social</h2>
             
-            <article class="projeto-card">
-                <p>Objetivo: Promover a inclusão digital para idosos, ensinando o uso básico de smartphones e internet.</p>
+            <section id="projetos-ativos" class="row">
+                <h3>Alfabetização Digital na Terceira Idade</h3>
                 
-                <section id="inscricao-projeto">
-                    <h3>Candidatura ao Projeto</h3>
-                    <form action="/inscrever_projeto" method="POST">
-                        <fieldset>
-                            <legend>Dados e Motivação</legend>
-                            
-                            <label for="motivacao">Motivação (Por que deseja participar?):</label>
-                            <textarea id="motivacao" name="motivacao" rows="5" required></textarea>
-                            
-                            <label for="inicio_disponivel">Mês disponível para iniciar:</label>
-                            <input type="month" id="inicio_disponivel" name="inicio_disponivel" required>
+                <article class="col-lg-6 col-md-12 projeto-card">
+                    <p>Objetivo: Promover a inclusão digital para idosos, ensinando o uso básico de smartphones e internet.</p>
+                    <a href="voluntariado.html" class="button">Seja um Mentor</a>
+                </article>
 
-                            <input type="checkbox" id="termos" name="termos" required>
-                            <label for="termos">Declaro que li e aceito os termos do projeto.</label>
-                            
-                        </fieldset>
-                        <button type="submit">Inscrever-se</button>
-                    </form>
-                </section>
-            </article>
-        </section>
+                <article class="col-lg-6 col-md-12 projeto-card">
+                    <h3>Cursos Profissionalizantes</h3>
+                    <p>Oferecemos cursos gratuitos de design, programação e marketing para jovens da periferia.</p>
+                    <a href="contato.html" class="button">Inscreva-se (Formulário 3)</a>
+                    </article>
+            </section>
 
-        <section id="galeria-fotos">
-            <h2>Nossas Atividades em Ação</h2>
-            <p>Veja o impacto dos projetos em imagens de alta qualidade (20 fotos dinâmicas).</p>
-            
-            <div class="galeria-grid" id="galeriaContainer">
+            <section id="galeria-fotos">
+                <h2>Nossas Atividades em Ação</h2>
+                <p>Veja o impacto dos projetos em imagens de alta qualidade. (Conteúdo gerado via Template JS)</p>
+
+                <div class="galeria-grid" id="galeriaContainer">
+                    <p>Carregando galeria...</p> 
                 </div>
-        </section>
+            </section>
+        </div>
     </main>
     
     <footer>
         <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('galeriaContainer');
-            if (!container) return; 
-
-            const totalImagens = 20;
-            let htmlContent = '';
-
-            for (let i = 1; i <= totalImagens; i++) {
-                const urlPequena = `https://picsum.photos/200/150?random=${i}`;
-                const urlGrande = `https://picsum.photos/400/300?random=${i}`;
-                
-                // Estrutura completa com <picture> e loading="lazy"
-                const figuraHtml = `
-                    <figure class="galeria-item">
-                        <picture>
-                            <source 
-                                srcset="${urlPequena}" 
-                                media="(max-width: 600px)">
-                            <img 
-                                src="${urlGrande}" 
-                                alt="Foto de projeto social, imagem de placeholder ${i}" 
-                                loading="lazy">
-                        </picture>
-                        <figcaption>Atividade ${i} (Projeto Placeholder)</figcaption>
-                    </figure>
-                `;
-                htmlContent += figuraHtml;
-            }
-            container.innerHTML = htmlContent;
-        });
-    </script> 
-    <script src="js/main.js"></script> 
+    <script src="js/main.js"></script>
 </body>
 </html>

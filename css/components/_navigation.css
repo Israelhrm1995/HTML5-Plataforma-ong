@@ -1,0 +1,110 @@
+/* ========================================================================= */
+/* COMPONENTS: _navigation.css - NAVEGAÇÃO SOFISTICADA                       */
+/* ========================================================================= */
+
+/* Esconde o checkbox e o label (hambúrguer) em desktop */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+/* Navegação em Desktop */
+nav ul {
+    display: flex; /* Flexbox para alinhar itens do menu */
+    gap: var(--spacing-3);
+}
+
+nav a {
+    color: var(--color-white);
+    padding: var(--spacing-1) var(--spacing-2);
+    transition: background-color 0.3s;
+}
+
+nav a:hover, nav a:focus {
+    background-color: var(--color-primary-dark);
+    border-radius: var(--border-radius);
+}
+
+/* --------------------------------------------------------------------- */
+/* NAVEGAÇÃO MOBILE (Breakpoint md: 768px)                                */
+/* --------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    /* Menu Hambúrguer visível */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 100;
+        padding: var(--spacing-1);
+    }
+    
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--color-white);
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    /* Esconde a navegação por padrão */
+    header nav {
+        position: fixed;
+        top: 0;
+        right: -300px; /* Esconde para fora da tela */
+        width: 300px;
+        height: 100%;
+        background-color: var(--color-neutral-dark);
+        z-index: 90;
+        padding-top: 80px;
+        transition: right 0.4s;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        padding: var(--spacing-4);
+    }
+
+    header nav a {
+        display: block;
+        color: var(--color-white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: var(--spacing-3);
+    }
+    
+    /* Ação do Hambúrguer (Checkbox Hack) */
+    .menu-toggle:checked ~ nav {
+        right: 0; /* Desliza o menu para dentro */
+    }
+    /* Gira o Hambúrguer ao abrir */
+    .menu-toggle:checked ~ .hamburger .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .menu-toggle:checked ~ .hamburger .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle:checked ~ .hamburger .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+}
+
+/* --------------------------------------------------------------------- */
+/* SUBMENU DROPDOWN (Requer estrutura adicional no HTML)                  */
+/* --------------------------------------------------------------------- */
+/* Exemplo de estrutura: <li><a>Item</a><ul><li>Subitem</li></ul></li> */
+nav ul li {
+    position: relative;
+}
+
+nav ul ul { /* Submenu */
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-small);
+    flex-direction: column; /* Sobrescreve o flex do menu principal */
+    gap: 0;
+}
+
+nav ul li:hover > ul {
+    display: flex; /* Mostra o submenu ao passar o mouse */
+}
+
+nav ul ul a {
+    padding: var(--spacing-2);
+    border-bottom: none;
+}

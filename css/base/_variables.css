@@ -1,0 +1,66 @@
+/* ========================================================================= */
+/* BASE: _variables.css - SISTEMA DE DESIGN                                  */
+/* ========================================================================= */
+
+:root {
+    /* --------------------------------------------------------------------- */
+    /* 1. PALETA DE CORES (8+ Cores)                                         */
+    /* --------------------------------------------------------------------- */
+    --color-primary: #007bff;        /* Azul Forte (Identidade da ONG) */
+    --color-primary-dark: #0056b3;   /* Azul para estados de hover */
+    --color-secondary: #28a745;      /* Verde (Esperança, Sucesso) */
+    --color-accent: #ffc107;         /* Amarelo/Laranja (Destaque, Atenção) */
+    
+    --color-neutral-light: #f8f9fa;  /* Fundo claro */
+    --color-neutral-mid: #6c757d;    /* Texto neutro/placeholder */
+    --color-neutral-dark: #343a40;   /* Texto principal e Headers */
+    --color-white: #ffffff;
+    
+    /* Cores de Feedback */
+    --color-success: #28a745;        /* Verde */
+    --color-error: #dc3545;          /* Vermelho */
+    --color-info: #17a2b8;           /* Ciano */
+
+    /* --------------------------------------------------------------------- */
+    /* 2. TIPOGRAFIA (5+ Tamanhos)                                           */
+    /* --------------------------------------------------------------------- */
+    --font-family-primary: 'Arial', sans-serif;
+    --font-family-secondary: 'Georgia', serif;
+
+    /* Tamanhos de Fonte */
+    --font-size-h1: 3.5rem;   /* 56px */
+    --font-size-h2: 2.5rem;   /* 40px */
+    --font-size-h3: 1.75rem;  /* 28px */
+    --font-size-body: 1rem;    /* 16px */
+    --font-size-small: 0.875rem; /* 14px */
+
+    /* --------------------------------------------------------------------- */
+    /* 3. SISTEMA DE ESPAÇAMENTO MODULAR (Base 8px)                          */
+    /* --------------------------------------------------------------------- */
+    --spacing-1: 8px;
+    --spacing-2: 16px;
+    --spacing-3: 24px;
+    --spacing-4: 32px;
+    --spacing-5: 48px;
+    --spacing-6: 64px;
+    --spacing-7: 96px; /* Adicional */
+
+    /* Sombras e Bordas */
+    --border-radius: 4px;
+    --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Estilos globais de texto */
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+    color: var(--color-neutral-dark);
+    background-color: var(--color-neutral-light);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+small, figcaption, .caption { font-size: var(--font-size-small); }

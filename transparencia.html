@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transparência e Relatórios | Instituto Mais Futuro</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparência e Relatórios | Instituto Mais Futuro</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1><a href="index.html">Instituto Mais Futuro</a></h1>
-        
-        <nav aria-label="Menu Principal">
-            <ul>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="voluntariado.html">Voluntariado</a></li>
-                <li><a href="doacoes.html">Doar</a></li>
-                <li><a href="transparencia.html">Transparência</a></li>
-                <li><a href="blog.html">Blog/Notícias</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <h1><a href="index.html">Instituto Mais Futuro</a></h1>
+        
+        <nav aria-label="Menu Principal">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doar</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="blog.html">Blog/Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main>
-        <section id="relatorios-impacto">
-            <h2>Relatórios de Transparência e Impacto</h2>
-            <p>Demonstramos onde cada recurso e esforço é aplicado, com gráficos visuais (Canvas).</p>
+    <main>
+        <div class="container">
+            <section id="relatorios-impacto">
+                <h2>Relatórios de Transparência e Impacto</h2>
+                <p>Demonstramos onde cada recurso e esforço é aplicado, com gráficos visuais (API Canvas do JavaScript).</p>
 
-            <figure>
-                <canvas id="graficoPizzaRecursos" width="400" height="400"></canvas>
-                <figcaption>Distribuição de Recursos por Projeto em 2024.</figcaption>
-            </figure>
+                <figure class="chart-figure">
+                    <canvas id="graficoPizzaRecursos" width="400" height="400" aria-label="Gráfico de Distribuição de Recursos"></canvas>
+                    <figcaption>Gráfico 1: Distribuição de Recursos por Projeto em 2024.</figcaption>
+                </figure>
+                
+                <figure class="chart-figure">
+                    <canvas id="graficoLinhaVoluntarios" width="600" height="300" aria-label="Gráfico de Evolução de Voluntários"></canvas>
+                    <figcaption>Gráfico 2: Evolução do Número de Voluntários (últimos 12 meses).</figcaption>
+                </figure>
 
-            <figure>
-                <canvas id="graficoLinhaVoluntarios" width="600" height="300"></canvas>
-                <figcaption>Evolução do Número de Voluntários (últimos 12 meses).</figcaption>
-            </figure>
+                <figure class="chart-figure">
+                    <canvas id="graficoBarrasRegiao" width="600" height="300" aria-label="Gráfico de Pessoas Impactadas por Região"></canvas>
+                    <figcaption>Gráfico 3: Pessoas Impactadas por Região Geográfica.</figcaption>
+                </figure>
 
-            <figure>
-                <canvas id="graficoBarrasRegiao" width="600" height="300"></canvas>
-                <figcaption>Pessoas Impactadas por Região Geográfica.</figcaption>
-            </figure>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
-    </footer>
-    <script src="js/main.js"></script> 
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>

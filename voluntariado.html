@@ -7,11 +7,36 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1><a href="index.html">Instituto Mais Futuro</a></h1>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="main-nav">
+        <label for="menu-toggle" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav aria-label="Menu Principal" id="main-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doar</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-        <section id="cadastro-voluntario">
-            <h2>Junte-se a Nós! Cadastro de Voluntário</h2>
+        <section id="cadastro-voluntario" class="container">
+            <h2>Junte-se a Nós! Cadastro de Voluntário (Formulário 1)</h2>
+            <p>Preencha o formulário abaixo para se candidatar às nossas oportunidades. Todos os campos são obrigatórios, exceto a experiência.</p>
+            
             <form action="/candidatura" method="POST">
+                
                 <fieldset>
                     <legend>Dados Pessoais e Contato</legend>
                     
@@ -39,11 +64,16 @@
                         pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
                         title="Formato: 000.000.000-00"
                         required>
+                    
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                    
                 </fieldset>
-                
+
                 <fieldset>
                     <legend>Interesses e Disponibilidade</legend>
-                    <p>Áreas de Interesse (Múltipla escolha):</p>
+
+                    <p>Áreas de Interesse (pelo menos uma):</p>
                     <div>
                         <input type="checkbox" id="educacao" name="area[]" value="educacao" checked>
                         <label for="educacao">Educação e Cursos</label>
@@ -51,6 +81,14 @@
                     <div>
                         <input type="checkbox" id="marketing" name="area[]" value="marketing">
                         <label for="marketing">Marketing Digital</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ti" name="area[]" value="ti">
+                        <label for="ti">TI e Desenvolvimento</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="admin" name="area[]" value="admin">
+                        <label for="admin">Administração</label>
                     </div>
                     
                     <label for="disp">Disponibilidade de Horas Semanal:</label>
@@ -73,6 +111,11 @@
             </form>
         </section>
     </main>
-    <footer></footer>
+    
+    <footer>
+        <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

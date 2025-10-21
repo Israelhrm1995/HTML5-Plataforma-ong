@@ -7,42 +7,80 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1><a href="index.html">Instituto Mais Futuro</a></h1>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="main-nav">
+        <label for="menu-toggle" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav aria-label="Menu Principal" id="main-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doar</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-        <section id="fale-conosco">
-            <h2>Entre em Contato</h2>
-            
-            <form action="/enviar_contato" method="POST">
-                <fieldset>
-                    <legend>Mensagem Rápida</legend>
-                    
-                    <label for="assunto">Assunto Principal:</label>
-                    <select id="assunto" name="assunto" required>
-                        <option value="">Selecione</option>
-                        <option value="duvida">Dúvida Geral</option>
-                        <option value="imprensa">Imprensa / Mídia</option>
-                        <option value="parceria">Proposta de Parceria</option>
-                    </select>
-
-                    <label for="mensagem">Sua Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-                    
-                    <label for="anexo">Anexar Documento (Opcional):</label>
-                    <input type="file" id="anexo" name="anexo" accept=".pdf, .doc, .png">
-                </fieldset>
+        <div class="container">
+            <section id="fale-conosco">
+                <h2>Entre em Contato (Formulário 3)</h2>
                 
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-        </section>
+                <form action="/enviar_contato" method="POST">
+                    <fieldset>
+                        <legend>Mensagem Rápida</legend>
+                        
+                        <label for="assunto">Assunto Principal:</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione</option>
+                            <option value="duvida">Dúvida Geral</option>
+                            <option value="imprensa">Imprensa / Mídia</option>
+                            <option value="parceria">Proposta de Parceria</option>
+                        </select>
 
-        <section id="localizacao-info">
-            <h3>Onde Estamos</h3>
-            <address>
-                Rua da Esperança, 123 - Bairro Solidário<br>
-                Cidade, Estado - CEP 00000-000
-            </address>
-        </section>
+                        <label for="mensagem">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                        
+                        <label for="anexo">Anexar Documento (Opcional):</label>
+                        <input type="file" id="anexo" name="anexo" accept=".pdf, .doc, .png">
+                    </fieldset>
+                    
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </section>
+
+            <section id="localizacao-info">
+                <h3>Onde Estamos</h3>
+                <address>
+                    Rua da Esperança, 123 - Bairro Solidário<br>
+                    Cidade, Estado - CEP 00000-000
+                </address>
+                
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.215509939525!2d-48.27137458552392!3d-19.86604218667623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a496f30a90e38f%3A0xc3f58a3a2a68e8e7!2sRua%20da%20Esperan%C3%A7a%2C%20123%20-%20Bairro%20Solid%C3%A1rio%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038400-000!5e0!3m2!1spt-BR!2sbr!4v1628178652458!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </section>
+        </div>
     </main>
-    <footer></footer>
+    
+    <footer>
+        <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
