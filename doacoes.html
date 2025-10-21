@@ -19,6 +19,7 @@
 
         <nav aria-label="Menu Principal" id="main-nav">
             <ul>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="voluntariado.html">Voluntariado</a></li>
@@ -28,64 +29,66 @@
             </ul>
         </nav>
     </header>
+    
     <main>
-        <div class="container">
-            <section id="formulario-doacao">
-                <h2>Faça Sua Doação e Transforme Vidas (Formulário 2)</h2>
-                <form action="/processar_doacao" method="POST">
-                    <fieldset>
-                        <legend>Valor e Frequência da Doação</legend>
-                        
-                        <p>Escolha a frequência da doação:</p>
-                        <div role="radiogroup" aria-labelledby="frequencia-label">
-                            <input type="radio" id="unica" name="frequencia" value="unica" required checked>
-                            <label for="unica">Doação Única</label>
-                            
-                            <input type="radio" id="mensal" name="frequencia" value="mensal">
-                            <label for="mensal">Mensal</label>
-                        </div>
-                        
-                        <p>Escolha um valor ou digite outro:</p>
-                        <div role="radiogroup" aria-labelledby="valor-label">
-                            <input type="radio" id="v50" name="valor_fixo" value="50">
-                            <label for="v50">R$ 50,00</label>
-                            
-                            <input type="radio" id="v100" name="valor_fixo" value="100" checked>
-                            <label for="v100">R$ 100,00</label>
-                            
-                            <input type="radio" id="v200" name="valor_fixo" value="200">
-                            <label for="v200">R$ 200,00</label>
-                        </div>
-                        
-                        <label for="valor_outros">Ou Outro Valor (R$):</label>
-                        <input type="number" id="valor_outros" name="valor_outros" min="10" placeholder="Mínimo R$ 10,00">
-                        
-                    </fieldset>
+        <section id="formulario-doacao" class="container">
+            <h2>Faça Sua Doação e Transforme Vidas (Formulário 2)</h2>
+            <form action="/processar_doacao" method="POST">
+                <fieldset>
+                    <legend>Valor e Frequência da Doação</legend>
                     
-                    <fieldset>
-                        <legend>Dados de Pagamento</legend>
-                        <label for="nome_doador">Nome no Cartão:</label>
-                        <input type="text" id="nome_doador" name="nome_doador" required>
-
-                        <label for="cartao">Número do Cartão:</label>
-                        <input type="text" id="cartao" name="cartao" pattern="\d{4} \d{4} \d{4} \d{4}" required placeholder="0000 0000 0000 0000">
-
-                        <label for="validade">Validade (MM/AA):</label>
-                        <input type="text" id="validade" name="validade" pattern="\d{2}/\d{2}" required placeholder="MM/AA">
-
-                        <label for="cvv">CVV:</label>
-                        <input type="text" id="cvv" name="cvv" pattern="\d{3}" required placeholder="000">
+                    <p>Escolha a frequência da doação:</p>
+                    <div role="radiogroup" aria-labelledby="frequencia-label">
+                        <input type="radio" id="unica" name="frequencia" value="unica" required checked>
+                        <label for="unica">Doação Única</label>
                         
-                    </fieldset>
+                        <input type="radio" id="mensal" name="frequencia" value="mensal">
+                        <label for="mensal">Mensal</label>
+                    </div>
+                    
+                    <p>Escolha um valor ou digite outro:</p>
+                    <div role="radiogroup" aria-labelledby="valor-label">
+                        <input type="radio" id="v50" name="valor_fixo" value="50">
+                        <label for="v50">R$ 50,00</label>
+                        
+                        <input type="radio" id="v100" name="valor_fixo" value="100" checked>
+                        <label for="v100">R$ 100,00</label>
+                    </div>
+                    
+                    <label for="valor_outros">Ou Outro Valor (R$):</label>
+                    <input type="number" id="valor_outros" name="valor_outros" min="10" placeholder="Mínimo R$ 10,00">
+                    
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome_doador">Nome:</label>
+                    <input type="text" id="nome_doador" name="nome_doador" required>
+                    <label for="email_doador">E-mail:</label>
+                    <input type="email" id="email_doador" name="email_doador" required>
+                </fieldset>
 
-                    <button type="submit">Finalizar Doação</button>
-                </form>
-            </section>
-        </div>
+                <fieldset>
+                    <legend>Dados de Pagamento</legend>
+                    <label for="cartao">Número do Cartão:</label>
+                    <input type="text" id="cartao" name="cartao" pattern="\d{4} \d{4} \d{4} \d{4}" required placeholder="0000 0000 0000 0000">
+
+                    <label for="validade">Validade (MM/AA):</label>
+                    <input type="text" id="validade" name="validade" pattern="\d{2}/\d{2}" required placeholder="MM/AA">
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" pattern="\d{3,4}" required placeholder="CVV">
+                </fieldset>
+                
+                <button type="submit">Finalizar Doação</button>
+            </form>
+        </section>
     </main>
     
     <footer>
         <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

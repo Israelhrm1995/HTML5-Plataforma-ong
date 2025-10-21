@@ -19,6 +19,7 @@
 
         <nav aria-label="Menu Principal" id="main-nav">
             <ul>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="voluntariado.html">Voluntariado</a></li>
@@ -30,93 +31,91 @@
     </header>
     
     <main>
-        <div class="container">
-            <section id="cadastro-voluntario">
-                <h2>Junte-se a Nós! Cadastro de Voluntário (Formulário 1)</h2>
-                <p>Preencha o formulário abaixo para se candidatar às nossas oportunidades.</p>
+        <section id="cadastro-voluntario" class="container">
+            <h2>Junte-se a Nós! Cadastro de Voluntário (Formulário 1)</h2>
+            <p>Preencha o formulário abaixo para se candidatar às nossas oportunidades. Todos os campos são obrigatórios, exceto a experiência.</p>
+            
+            <form action="/candidatura" method="POST">
                 
-                <form action="/candidatura" method="POST">
+                <fieldset>
+                    <legend>Dados Pessoais e Contato</legend>
                     
-                    <fieldset>
-                        <legend>Dados Pessoais e Contato</legend>
-                        
-                        <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" required>
-                        
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                        
-                        <label for="telefone">Telefone:</label>
-                        <input 
-                            type="tel" 
-                            id="telefone" 
-                            name="telefone" 
-                            placeholder="(99) 99999-9999"
-                            pattern="\(\d{2}\) \d{4,5}-\d{4}" 
-                            required>
-
-                        <label for="cpf">CPF:</label>
-                        <input 
-                            type="text" 
-                            id="cpf" 
-                            name="cpf" 
-                            placeholder="000.000.000-00"
-                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-                            title="Formato: 000.000.000-00"
-                            required>
-
-                        <label for="data_nasc">Data de Nascimento:</label>
-                        <input type="date" id="data_nasc" name="data_nasc" required>
-                        
-                    </fieldset>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
                     
-                    <fieldset>
-                        <legend>Interesses e Disponibilidade</legend>
-                        
-                        <p>Áreas de Interesse (pode escolher mais de uma):</p>
-                        <div role="checkboxgroup" aria-labelledby="area-label">
-                            <div>
-                                <input type="checkbox" id="educacao" name="area[]" value="educacao" checked>
-                                <label for="educacao">Educação e Cursos</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="marketing" name="area[]" value="marketing">
-                                <label for="marketing">Marketing Digital</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="ti" name="area[]" value="ti">
-                                <label for="ti">TI e Desenvolvimento</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="admin" name="area[]" value="admin">
-                                <label for="admin">Administração</label>
-                            </div>
-                        </div>
-                        
-                        <label for="disp">Disponibilidade de Horas Semanal:</label>
-                        <select id="disp" name="disponibilidade" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="4">Até 4 horas</option>
-                            <option value="8">4 a 8 horas</option>
-                            <option value="12">Mais de 8 horas</option>
-                        </select>
-
-                        <label for="motivacao">Nível de Motivação (1 a 10):</label>
-                        <input type="range" id="motivacao" name="motivacao" min="1" max="10" value="8">
-                        
-                        <label for="experiencia">Fale um pouco sobre sua experiência prévia ou motivação:</label>
-                        <textarea id="experiencia" name="experiencia" rows="5"></textarea>
-                        
-                    </fieldset>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
                     
-                    <button type="submit">Enviar Candidatura</button>
-                </form>
-            </section>
-        </div>
+                    <label for="telefone">Telefone:</label>
+                    <input 
+                        type="tel" 
+                        id="telefone" 
+                        name="telefone" 
+                        placeholder="(99) 99999-9999"
+                        pattern="\(\d{2}\) \d{4,5}-\d{4}" 
+                        required>
+
+                    <label for="cpf">CPF:</label>
+                    <input 
+                        type="text" 
+                        id="cpf" 
+                        name="cpf" 
+                        placeholder="000.000.000-00"
+                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                        title="Formato: 000.000.000-00"
+                        required>
+                    
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend>Interesses e Disponibilidade</legend>
+
+                    <p>Áreas de Interesse (pelo menos uma):</p>
+                    <div>
+                        <input type="checkbox" id="educacao" name="area[]" value="educacao" checked>
+                        <label for="educacao">Educação e Cursos</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="marketing" name="area[]" value="marketing">
+                        <label for="marketing">Marketing Digital</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ti" name="area[]" value="ti">
+                        <label for="ti">TI e Desenvolvimento</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="admin" name="area[]" value="admin">
+                        <label for="admin">Administração</label>
+                    </div>
+                    
+                    <label for="disp">Disponibilidade de Horas Semanal:</label>
+                    <select id="disp" name="disponibilidade" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="4">Até 4 horas</option>
+                        <option value="8">4 a 8 horas</option>
+                        <option value="12">Mais de 8 horas</option>
+                    </select>
+
+                    <label for="motivacao">Nível de Motivação (1 a 10):</label>
+                    <input type="range" id="motivacao" name="motivacao" min="1" max="10" value="8">
+                    
+                    <label for="experiencia">Fale um pouco sobre sua experiência prévia ou motivação:</label>
+                    <textarea id="experiencia" name="experiencia" rows="5"></textarea>
+                    
+                </fieldset>
+                
+                <button type="submit">Enviar Candidatura</button>
+            </form>
+        </section>
     </main>
     
     <footer>
         <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -19,6 +19,7 @@
 
         <nav aria-label="Menu Principal" id="main-nav">
             <ul>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="voluntariado.html">Voluntariado</a></li>
@@ -33,60 +34,28 @@
         <div class="container">
             <h2>Projetos de Transformação Social</h2>
             
-            <section id="projetos-ativos">
+            <section id="projetos-ativos" class="row">
                 <h3>Alfabetização Digital na Terceira Idade</h3>
                 
-                <div class="row">
-                    <article class="col-lg-4 col-md-6 projeto-card">
-                        <p>Objetivo: Promover a inclusão digital para idosos, ensinando o uso básico de smartphones e internet.</p>
-                        <span class="badge badge-primary">Em Andamento</span>
-                    </article>
-                    
-                    <article class="col-lg-4 col-md-6 projeto-card">
-                        <h4>Impacto</h4>
-                        <p>300 idosos formados e 90% de satisfação.</p>
-                    </article>
+                <article class="col-lg-6 col-md-12 projeto-card">
+                    <p>Objetivo: Promover a inclusão digital para idosos, ensinando o uso básico de smartphones e internet.</p>
+                    <a href="voluntariado.html" class="button">Seja um Mentor</a>
+                </article>
 
-                    <article class="col-lg-4 col-md-12 projeto-card">
-                        <h4>Parceiros</h4>
-                        <p>Apoio da Secretaria de Inovação e da Tech For All.</p>
+                <article class="col-lg-6 col-md-12 projeto-card">
+                    <h3>Cursos Profissionalizantes</h3>
+                    <p>Oferecemos cursos gratuitos de design, programação e marketing para jovens da periferia.</p>
+                    <a href="contato.html" class="button">Inscreva-se (Formulário 3)</a>
                     </article>
-                </div>
-                
-            </section>
-            
-            <section id="inscricao-projetos">
-                <h3>Formulário 3: Inscrição em Projetos</h3>
-                <form action="/inscricao_projeto" method="POST">
-                    <fieldset>
-                        <legend>Manifeste seu Interesse</legend>
-                        <label for="nome_proj">Nome Completo:</label>
-                        <input type="text" id="nome_proj" name="nome_proj" required>
-                        
-                        <label for="projeto">Projeto de Interesse:</label>
-                        <select id="projeto" name="projeto" required>
-                            <option value="">Selecione um Projeto</option>
-                            <option value="digital">Alfabetização Digital</option>
-                            <option value="esporte">Inclusão Esportiva</option>
-                            <option value="artes">Oficina de Artes</option>
-                        </select>
-                        
-                        <label for="data_inicio">Melhor Data para Iniciar (Mês/Ano):</label>
-                        <input type="month" id="data_inicio" name="data_inicio" required>
-
-                        <label for="motivacao_proj">Por que você se interessou por este projeto?</label>
-                        <textarea id="motivacao_proj" name="motivacao_proj" rows="4"></textarea>
-                    </fieldset>
-                    <button type="submit">Inscrever-se</button>
-                </form>
             </section>
 
             <section id="galeria-fotos">
-                <h2>Galeria de Fotos (20 Imagens Dinâmicas)</h2>
-                <p>Veja o impacto dos projetos em imagens de alta qualidade. As imagens abaixo são geradas via JavaScript.</p>
-                
+                <h2>Nossas Atividades em Ação</h2>
+                <p>Veja o impacto dos projetos em imagens de alta qualidade. (Conteúdo gerado via Template JS)</p>
+
                 <div class="galeria-grid" id="galeriaContainer">
-                    </div>
+                    <p>Carregando galeria...</p> 
+                </div>
             </section>
         </div>
     </main>
@@ -95,39 +64,6 @@
         <p>&copy; 2024 Instituto Mais Futuro. Todos os direitos reservados.</p>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('galeriaContainer');
-            if (!container) return; 
-
-            const totalImagens = 20;
-            let htmlContent = '';
-
-            for (let i = 1; i <= totalImagens; i++) {
-                // URLs Placeholder: https://picsum.photos/400/300?random=1
-                const urlPequena = `https://picsum.photos/200/150?random=${i}`;
-                const urlGrande = `https://picsum.photos/400/300?random=${i}`;
-                
-                // Estrutura completa com <picture> e loading="lazy"
-                const figuraHtml = `
-                    <figure class="galeria-item">
-                        <picture>
-                            <source 
-                                srcset="${urlPequena}" 
-                                media="(max-width: 600px)">
-                            <img 
-                                src="${urlGrande}" 
-                                alt="Foto de projeto social, imagem de placeholder ${i}" 
-                                loading="lazy">
-                        </picture>
-                        <figcaption>Atividade ${i} (Projeto Placeholder)</figcaption>
-                    </figure>
-                `;
-                htmlContent += figuraHtml;
-            }
-            container.innerHTML = htmlContent;
-        });
-    </script> 
-    <script src="js/main.js"></script> 
+    <script src="js/main.js"></script>
 </body>
 </html>
