@@ -1,69 +1,72 @@
-Projeto: Instituto Mais Futuro - Site Institucional
-Visão Geral
-Este projeto representa o site institucional da ONG fictícia Instituto Mais Futuro, desenvolvido para cumprir os requisitos de um projeto acadêmico de desenvolvimento web.
+# Projeto: Instituto Mais Futuro - Site Institucional
 
-O foco é demonstrar o domínio de HTML5 (semântica e estrutura), CSS3 (estilização e responsividade) e JavaScript (Vanilla JS) (interatividade, gráficos e geração dinâmica de conteúdo).
+## 📄 Visão Geral
 
-Estrutura de Arquivos
-O projeto é estruturado nos seguintes arquivos principais:
+Este projeto representa o site institucional de uma ONG fictícia, o **Instituto Mais Futuro**, desenvolvido para cumprir os requisitos de um projeto acadêmico de desenvolvimento web.
 
-Tecnologias
-HTML5: Estrutura semântica e acessível.
+O foco é demonstrar o domínio de:
+1.  **HTML5:** Estrutura semântica e acessível.
+2.  **CSS3:** Estilização, Design System e adaptação de layout (incluindo correções de empilhamento de gráficos).
+3.  **JavaScript (Vanilla JS):** Lógica funcional, interatividade, manipulação de DOM, gráficos Canvas e geração dinâmica de conteúdo.
 
-CSS3: **Estilização modular, responsiva e acessível.**
-  * **Arquitetura:** Estrutura modular (simulando SCSS/pré-processador) com arquivos dedicados a reset, variáveis, layouts e componentes.
-  * **Design System:** Uso de Variáveis CSS (`--color-primary`, `--spacing-1`, etc.).
-  * **Layouts:** Implementação de Flexbox para componentes e Grid Layout de 12 colunas para o sistema de layout principal.
+---
 
-JavaScript (Vanilla JS): Lógica funcional para interatividade, gráficos Canvas e geração dinâmica de conteúdo.
+## 📂 Estrutura de Arquivos
 
-Arquivos HTML Principais
-index.html: Página inicial e Formulário 4 (Newsletter).
+O projeto é estruturado nos seguintes diretórios e arquivos principais:
 
-sobre.html: Apresentação da ONG e elementos de multimídia (Vídeo/Áudio Placeholder).
+seu-projeto/
+├── index.html
+├── sobre.html
+├── ... (todos os 7 arquivos HTML)
+├── css/
+│   ├── styles.css             <-- PONTO DE ENTRADA (Importa todos os módulos)
+│   ├── base/
+│   │   ├── _reset.css         <-- Reset, Box-sizing e Normalização
+│   │   └── _variables.css     <-- Design System (Cores, Tipografia, Spacing)
+│   ├── layouts/
+│   │   ├── _grid.css          <-- Sistema de Grid (12 colunas) e Estrutura Principal
+│   │   └── _layout.css        <-- Header, Footer, Main (Flexbox/Grid)
+│   ├── components/
+│   │   ├── _buttons.css       <-- Botões e estados visuais
+│   │   ├── _navigation.css    <-- Menu, Dropdown, Menu Hambúrguer
+│   │   ├── _forms.css         <-- Estilização e validação de Formulários
+│   │   └── _cards.css         <-- Cards e Galeria
+│   └── utilities/
+│       └── _helpers.css       <-- Badges, Tags, Alerts e Modals (Feedback)
+└── js/
+    └── main.js
 
-projetos.html: Detalhamento dos projetos, Formulário 3 (Inscrição) e a Galeria de 20 Imagens Dinâmicas.
+---
 
-voluntariado.html: Formulário 1 (Complexo) de candidatura.
+## ✨ Requisitos e Implementações Específicas
 
-doacoes.html: Formulário 2 de doação e dados de pagamento.
+O projeto até o momento atende aos seguintes requisitos:
 
-transparencia.html: Demonstração de impacto com 3 Gráficos Canvas (Pizza, Linha, Barras).
+### 1. Gráficos Canvas e Visualização de Dados
+* **Página:** `transparencia.html`
+* **Implementação:** Três tipos de gráficos (Pizza, Linha e Barras) são desenhados usando a API Canvas do HTML5 via `js/main.js`.
+* **Correção de Layout:** O `styles.css` foi ajustado com `display: block;` e `clear: both;` nos elementos `.chart-figure` para garantir o empilhamento vertical correto e a centralização dos gráficos, resolvendo problemas de sobreposição e alinhamento lateral.
 
-contato.html: Formulário de Contato.
+### 2. Formulários (4 Tipos)
+Quatro formulários distintos, utilizando diversos `input types` avançados, `fieldset`, `legend` e atributos como `pattern` e `required`:
+* **Formulário 1 (Complexo):** Cadastro de Voluntário (`voluntariado.html`).
+* **Formulário 2:** Doação e Pagamento (`doacoes.html`).
+* **Formulário 3:** Inscrição em Projeto (`projetos.html`).
+* **Formulário 4 (Newsletter):** Assinatura na Home (`index.html`).
+* **Validação em JS:** Implementada em `js/main.js` para adicionar classes de erro (`.input-error`, `.error-message`) dinamicamente.
 
-Requisitos e Implementações Específicas
-O projeto atende a todos os requisitos solicitados:
+### 3. Multimídia e Imagens Avançadas
+* **Galeria Dinâmica (20 Imagens):** Implementada em `projetos.html` com geração de 20 elementos `<figure>` usando um **laço de repetição `for` e Template Literals** em `js/main.js`.
+* **Imagens Responsivas/Otimizadas:** Todas as imagens utilizam a tag `<picture>` para simular o carregamento de diferentes fontes (`<source>`) baseado no tamanho da tela.
+* **Lazy Loading:** Todas as imagens possuem o atributo `loading="lazy"`.
+* **Vídeo e Áudio:** Tags `<video>` e `<audio>` implementadas em `sobre.html` (utilizando URLs placeholder para demonstração de uso da tag).
 
-1. Multimídia e Imagens Avançadas
-20 Imagens Dinâmicas: Implementadas em projetos.html através de JavaScript inline (interpolação), utilizando for loop para gerar as estruturas.
+---
 
-Todas as imagens utilizam a tag <picture> para simular responsividade.
+## ⚙️ Instruções de Execução
 
-Todas possuem o atributo loading="lazy".
-
-Vídeo e Áudio: Tags <video> e <audio> implementadas em sobre.html com links de placeholder externos (ex.: Big Buck Bunny, SoundHelix) para fins acadêmicos.
-
-2. Formulários (4 Tipos)
-Quatro formulários distintos em diferentes páginas (Voluntariado, Doação, Projetos, Newsletter), utilizando diversos input types (month, range) e atributos (pattern, fieldset).
-
-3. Gráficos Canvas
-Implementação de 3 tipos de gráficos (Pizza, Linha e Barras) na página transparencia.html, desenhados usando a API Canvas via js/main.js.
-
-4. Estilização Avançada e Responsividade (CSS3)
-Design Responsivo Completo: Uso de Media Queries para adaptar o layout a dispositivos móveis, tablets e desktops.
-
-Menu Hambúrguer: Implementação do menu responsivo utilizando o "Checkbox Hack" no HTML/CSS, garantindo acessibilidade e funcionalidade sem JavaScript.
-
-Grid Layout: Aplicação de um sistema de Grid de 12 colunas (classes .row, .col-lg-X, .col-md-X) e Container centralizado para alinhar o conteúdo principal.
-
-CSS Modular: Estilização organizada em arquivos modulares (reset, typography, layouts, components).
-
-Instruções de Execução
-Clone o repositório para sua máquina local.
-
-Abra o arquivo index.html no seu navegador de preferência.
-
-O JavaScript (para os gráficos e a galeria dinâmica) será executado automaticamente no seu ambiente local.
-
-Status do Projeto: ✅ Completo e Validado.
+1.  **Clone** ou **Baixe** o repositório para sua máquina local.
+2.  Abra o arquivo **`index.html`** no seu navegador de preferência.
+3.  Navegue para a página **`transparencia.html`** para visualizar os gráficos Canvas sendo desenhados pelo `main.js`.
+4.  O JavaScript (para os gráficos, a galeria dinâmica e a validação) será executado automaticamente ao carregar as páginas.
