@@ -70,3 +70,51 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 4px;
 }
+
+/* ========================================================================= */
+/* MÓDULO DE ACESSIBILIDADE WCAG 2.1 - Alto Contraste / Modo Escuro         */
+/* ========================================================================= */
+
+/* 1. Modo Escuro (Preferência do Usuário) */
+/* Garante que o contraste seja mantido em um tema escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Inverte as cores primárias */
+        --color-background-primary: #121212; /* Fundo Escuro */
+        --color-text-primary: #f0f0f0;       /* Texto Claro */
+        --color-highlight-bg: #1e1e1e;       /* Fundo de elementos (cards, formulários) */
+        --color-border: #333;
+    }
+    
+    header, footer {
+        background-color: var(--color-highlight-bg);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    /* Garante contraste em links */
+    a:link, a:visited {
+        color: #8ab4f8; /* Azul claro com bom contraste no fundo escuro */
+    }
+}
+
+/* 2. Classe para Alto Contraste Forçado (Opcional, ativada por um botão JS) */
+/* WCAG Alto Contraste forçado: Fundo preto, texto branco, bordas amarelas. */
+.alto-contraste {
+    /* Regras mais rígidas para garantir o máximo de contraste */
+    filter: none !important; /* Anula qualquer filtro */
+    background-color: black !important;
+    color: white !important;
+}
+
+.alto-contraste :is(h1, h2, h3, h4, p, a, label, figcaption) {
+    color: white !important;
+    background-color: black !important;
+}
+
+.alto-contraste button, 
+.alto-contraste input[type="submit"], 
+.alto-contraste .button-principal {
+    background-color: yellow !important;
+    color: black !important;
+    border: 2px solid yellow !important;
+}

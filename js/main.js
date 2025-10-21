@@ -176,6 +176,10 @@ const drawCharts = () => {
 
             anguloInicial = anguloFinal;
         }
+        canvasPizza.setAttribute(
+        'aria-label', 
+        'Gráfico de Barras: Pessoas Impactadas por Região. Região A: 500, Região B: 750, Região C: 300.'
+    );
     }
 
 
@@ -245,6 +249,11 @@ const drawCharts = () => {
         ctx.moveTo(padding, altura - padding);
         ctx.lineTo(largura - padding, altura - padding);
         ctx.stroke();
+        
+        canvasLinha.setAttribute(
+        'aria-label', 
+        'Gráfico de Barras: Pessoas Impactadas por Região. Região A: 500, Região B: 750, Região C: 300.'
+    );
     }
 
 
@@ -297,6 +306,11 @@ const drawCharts = () => {
             // Incrementa a posição X para a próxima barra
             xPos += barraLargura + espaco;
         }
+
+        canvasBarras.setAttribute(
+        'aria-label', 
+        'Gráfico de Barras: Pessoas Impactadas por Região. Região A: 500, Região B: 750, Região C: 300.'
+         );
     }
 };
 
